@@ -1,3 +1,18 @@
+### Java ###
+.class
+
+.settings
+
+**/Thumbs.db
+**/*.class
+bin/
+testing/
+
+# Package Files #
+*.ear
+*.war
+*.jar
+
 .gradle
 **/build/
 !src/**/build/

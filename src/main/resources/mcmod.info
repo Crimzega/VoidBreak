@@ -1,0 +1,15 @@
+[{
+	"modid": "VoidBreakDemo2",
+	"name": "Void Break (Demo 2)",
+	"description": "Meet new mobs, explore new dimensions, and dominate your enemies.
+(Just another demo, mod still in development.)",
+	"version": "preBeta-v1r1",
+	"mcversion": "1.7.10",
+	"url": "http://voidbreakmod.blogspot.com/",
+	"updateUrl": "",
+	"authorList": ["TPOD_CI"],
+	"credits": "Thanks to FML creators for making this mod possible.",
+	"logoFile": "VoidBreakDemo.png",
+	"screenshots": [],
+	"dependencies": []
+}]

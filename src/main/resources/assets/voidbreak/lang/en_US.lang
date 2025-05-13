@@ -1,0 +1,72 @@
+itemGroup.blocksVB=VoidBreak: Blocks
+itemGroup.itemsVB=VoidBreak: Items
+itemGroup.edibleVB=VoidBreak: Edible
+
+achievement.newGems=NEW GEMS!
+achievement.newGems.desc=
+
+container.zechaDrawer=Zecha Drawer
+
+tile.logCitrus.name=Citrus Log
+tile.leavesCitrus.name=Citrus Leaves
+tile.saplingCitrus.name=Citrus Sapling
+tile.planksCitrus.name=Citrus Planks
+tile.slabCitrus.name=Citrus Slab
+
+tile.gemOre.ruby.name=Ruby Ore
+tile.gemOre.pinkPanther.name=Pink Panther Ore
+tile.gemOre.sapphire.name=Sapphire Ore
+tile.gemOre.cassiterite.name=Cassiterite Ore
+tile.gemOre.enstatite.name=Enstatite Ore
+tile.gemOre.moonstone.name=Moonstone Ore
+
+tile.ultimaniumOre.name=Ultimanium Ore
+tile.specialOre.name=Zéta Ore
+tile.zechaOre.name=Zecha Ore
+
+tile.gem.ruby.name=Block of Ruby
+tile.gem.pinkPanther.name=Block of Pink Panther
+tile.gem.sapphire.name=Block of Sapphire
+tile.gem.cassiterite.name=Block of Cassiterite
+tile.gem.enstatite.name=Block of Enstatite
+tile.gem.moonstone.name=Block of Moonstone
+
+tile.special.name=Block of Zéta
+tile.zecha.name=Block of Zecha
+tile.ultine.name=Block of Ultine
+tile.sweetPotato.name=Sweet Potatoes
+tile.sugar.name=Sugar Block
+tile.sugarPile.name=Sugar Pile
+tile.burntSugar.name=Burnt Sugar Block
+tile.burntSugarPile.name=Burnt Sugar Pile
+tile.zechaDrawer.name=Zecha Drawer
+
+tile.voidGem.diamond.name=Block of Energized Diamond
+tile.voidGem.ruby.name=Block of Energized Ruby
+tile.voidGem.pinkPanther.name=Block of Energized Pink Panther
+tile.voidGem.sapphire.name=Block of Energized Sapphire
+tile.voidGem.emerald.name=Block of Energized Emerald
+tile.voidGem.cassiterite.name=Block of Cassiterite
+tile.voidGem.enstatite.name=Block of Energized Enstatite
+tile.voidGem.moonstone.name=Block of Energized Moonstone
+
+tile.nothing.name=Nothing (Block Formation)
+
+item.gem.ruby.name=Ruby
+item.gem.pinkPanther.name=Pink Panther
+item.gem.sapphire.name=Sapphire
+item.gem.cassiterite.name=Cassiterite
+item.gem.enstatite.name=Enstatite
+item.gem.moonstone.name=Moonstone
+
+item.ultimaniumIngot.name=Ultimanium Ingot
+item.specialDust.name=Z\u00E9ta Dust
+item.specialIngot.name=Z\u00E9ta Ingot
+item.zechaIngot.name=Zecha Ingot
+item.sweetPotato.name=Sweet Potato
+item.bakedSweetPotato.name=Baked Sweet Potato
+item.energyBar.name=Energy Bar
+item.orange.name=Orange
+item.orangeSlice.name=Orange Slice
+item.orangeWedge.name=Orange Wedge
+item.orangePeel.name=Orange Peel

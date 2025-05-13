@@ -1,0 +1,24 @@
+{
+	"version": "0.2.0",
+	"configurations": [{
+		"type": "java",
+		"name": "VoidBreak (Client)",
+		"mainClass": "GradleStart",
+		"projectName": "VoidBreak",
+		"args": "--width 1280 --height 720 --username Crimzega",
+		"vmArgs": "-Xincgc -Xmx4G -Xms2G",
+		"cwd": "${workspaceFolder}/VoidBreak/testing",
+		"console": "internalConsole",
+		"request": "launch"
+	}, {
+		"type": "java",
+		"name": "VoidBreak (Server)",
+		"mainClass": "GradleStartServer",
+		"projectName": "VoidBreak",
+		"args": "--width 1280 --height 720",
+		"vmArgs": "-Xincgc -Xmx4G -Xms2G",
+		"cwd": "${workspaceFolder}/VoidBreak/testing",
+		"console": "internalConsole",
+		"request": "launch"
+	}]
+}
