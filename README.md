@@ -3,7 +3,7 @@
 > [!NOTE]
 > The current project currently in an incomplete rewritten state from an old variation dubbed as an `Array Hell`, referring to all custom mod blocks, items, biomes and such being a part of and referenced from arrays exclusively.
 >
-> The finalized version from the `tpod.voidbreak` package to the `com.sulvic.voidbreak` package will take some time as there some additional content as well as finalized functional ideas being added on top of the rewrite.
+> The finalized version from the `tpod.voidbreakdemo2` package to the `com.sulvic.voidbreak` package will take some time as there some additional content as well as finalized functional ideas being added on top of the rewrite.
 
 ## Introduction
 
