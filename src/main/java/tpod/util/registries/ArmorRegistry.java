@@ -10,27 +10,27 @@ public class ArmorRegistry extends ItemArmor{
 	public String armorTexture;
 	public String regContent;
 
-	public ArmorRegistry(final String unlName, final ItemArmor.ArmorMaterial material, final int slot, final int type){
+	public ArmorRegistry(String unlName, ItemArmor.ArmorMaterial material, int slot, int type){
 		super(material, slot, type);
-		this.setCreativeTab(ContentsVBD2.creativeTabs[4]);
-		this.setMaxStackSize(1);
-		this.setUnlocalizedName(unlName);
-		this.regContent = unlName;
+		setCreativeTab(ContentsVBD2.creativeTabs[4]);
+		setMaxStackSize(1);
+		setUnlocalizedName(unlName);
+		regContent = unlName;
 	}
 
-	public String getArmorTexture(final ItemStack stack, final Entity entity, final int slot, final String type){
-		if(slot == 2){ return "VoidBreakDemo2:textures/armor/" + this.armorTexture + "_layer2.png"; }
-		return "VoidBreakDemo2:textures/armor/" + this.armorTexture + "_layer1.png";
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
+		if(slot == 2) return "VoidBreakDemo2:textures/armor/" + armorTexture + "_layer2.png";
+		return "VoidBreakDemo2:textures/armor/" + armorTexture + "_layer1.png";
 	}
 
-	public ArmorRegistry textures(final int stop){
-		this.armorTexture = this.regContent.substring(0, stop);
-		this.setTextureName("VoidBreakDemo2:armor/" + this.regContent);
+	public ArmorRegistry textures(int stop){
+		armorTexture = regContent.substring(0, stop);
+		setTextureName("VoidBreakDemo2:armor/" + regContent);
 		return this;
 	}
 
 	public ArmorRegistry registerArmor(){
-		GameRegistry.registerItem((Item)this, this.regContent);
+		GameRegistry.registerItem((Item)this, regContent);
 		return this;
 	}
 

@@ -50,7 +50,7 @@ public class HokurmiRecipes{
 		GameRegistry.addShapedRecipe(new ItemStack(SUGAR_BLOCK), FULL_BLOCK_RECIPE, 'T', Items.sugar);
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.sugar, 9), SUGAR_BLOCK);
 //		GameRegistry.addShapedRecipe(new ItemStack(BURNT_SUGAR_BLOCK), FULL_BLOCK_RECIPE, 'T', BURNT_SUGAR);
-//		GameRegistry.addShapedRecipe(new ItemStack(BURNT_SUGAR), BURNT_SUGAR_BLOCK);
+//		GameRegistry.addShapelessRecipe(new ItemStack(BURNT_SUGAR, 9), BURNT_SUGAR_BLOCK);
 //		GameRegistry.addShapedRecipe(new ItemStack(SPECIAL_WORKBENCH), SMALL_BLOCK_RECIPE, 'T', SPECIAL_INGOT);
 		GameRegistry.addShapedRecipe(new ItemStack(ZECHA_DRAWER), HOLLOW_RECIPE, 'T', ZECHA_INGOT);
 //		for(VoidGemstoneData.Type type: VoidGemstoneData.Type.values()){

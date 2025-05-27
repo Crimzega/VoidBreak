@@ -14,13 +14,13 @@ public class ZetaOre extends BlockBreakable{
 
 	public ZetaOre(){
 		super("VoidBreakDemo2:zetaOre", Material.glass, false);
-		this.setBlockName("zetaOre");
-		this.setBlockTextureName("VoidBreakDemo2:zetaOre");
-		this.setCreativeTab(ContentsVBD2.creativeTabs[0]);
-		this.setHardness(3.0f);
-		this.setHarvestLevel("pickaxe", 2);
-		this.setResistance(5.0f);
-		this.setStepSound(Block.soundTypeGlass);
+		setBlockName("zetaOre");
+		setBlockTextureName("VoidBreakDemo2:zetaOre");
+		setCreativeTab(ContentsVBD2.creativeTabs[0]);
+		setHardness(3f);
+		setHarvestLevel("pickaxe", 2);
+		setResistance(5f);
+		setStepSound(Block.soundTypeGlass);
 	}
 
 	public Item getItemDropped(final int par1, final Random rand, final int par2){ return ContentsVBD2.items[4]; }

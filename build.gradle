@@ -29,6 +29,10 @@ targetCompatibility = 1.8
 
 repositories {
 	maven {
+		name = 'Forge'
+		url = 'https://maven.minecraftforge.net/'
+	}
+	maven {
 		name = 'ChickenBones'
 		url = 'https://chickenbones.net/maven/'
 	}

@@ -77,7 +77,6 @@ public class BlockZechaDrawer extends BlockContainer{
 			TileEntity tile = world.getTileEntity(x, y, z);
 			if(tile instanceof TileZechaDrawer){
 				TileZechaDrawer drawer = getAvailableDrawer(world, x, y, z, side);
-				VoidBreak.getLogger().info(drawer);
 				if(drawer != null) player.openGui(VoidBreak.instance, zechaDrawerID, world, x, y, z);
 			}
 			return true;
@@ -102,35 +101,35 @@ public class BlockZechaDrawer extends BlockContainer{
 
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z){
+		super.onBlockAdded(world, x, y, z);
 		if(!world.isRemote){
-			Block block = world.getBlock(x, y, z - 1), block1 = world.getBlock(x, y, z + 1), block2 = world.getBlock(x - 1, y, z), block3 = world.getBlock(x + 1, y, z);
-			int metadata = 3;
-			if(block.func_149730_j() && !block1.func_149730_j()) metadata = 3;
-			if(block1.func_149730_j() && !block.func_149730_j()) metadata = 2;
-			if(block2.func_149730_j() && !block3.func_149730_j()) metadata = 5;
-			if(block3.func_149730_j() && !block2.func_149730_j()) metadata = 4;
-			world.setBlockMetadataWithNotify(x, y, z, metadata, 2);
+			// Block block = world.getBlock(x, y, z - 1), block1 = world.getBlock(x, y, z + 1), block2 = world.getBlock(x - 1, y, z), block3 = world.getBlock(x + 1, y, z);
+			// byte b0 = 3;
+			// if(block.func_149730_j() && !block1.func_149730_j()) b0 = 3;
+			// if(block1.func_149730_j() && !block.func_149730_j()) b0 = 2;
+			// if(block2.func_149730_j() && !block3.func_149730_j()) b0 = 5;
+			// if(block3.func_149730_j() && !block2.func_149730_j()) b0 = 4;
+			// VoidBreak.getLogger().info("Metadata: {}", b0);
+			// world.setBlockMetadataWithNotify(x, y, z, b0, 2);
 		}
 	}
 
 	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase livingBase, ItemStack stack){
-		byte metadata = 0;
 		switch(MathHelper.floor_double((double)(livingBase.rotationYaw * 4f / 360f) + 0.5d) & 3){
 			case 0:
-				metadata = 2;
+				world.setBlockMetadataWithNotify(x, y, z, 2, 2);
 			break;
 			case 1:
-				metadata = 5;
+				world.setBlockMetadataWithNotify(x, y, z, 5, 2);
 			break;
 			case 2:
-				metadata = 3;
+				world.setBlockMetadataWithNotify(x, y, z, 3, 2);
 			break;
 			case 3:
-				metadata = 4;
+				world.setBlockMetadataWithNotify(x, y, z, 4, 2);
 			break;
 		}
-		world.setBlockMetadataWithNotify(x, y, z, metadata, 2);
 		if(stack.hasDisplayName()){
 			TileZechaDrawer drawer = (TileZechaDrawer)world.getTileEntity(x, y, z);
 			drawer.setCustomInventoryName(stack.getDisplayName());

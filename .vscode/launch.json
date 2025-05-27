@@ -7,7 +7,7 @@
 		"projectName": "VoidBreak",
 		"args": "--width 1280 --height 720 --username Crimzega",
 		"vmArgs": "-Xincgc -Xmx4G -Xms2G",
-		"cwd": "${workspaceFolder}/VoidBreak/testing",
+		"cwd": "${workspaceFolder}\\testing",
 		"console": "internalConsole",
 		"request": "launch"
 	}, {
@@ -17,7 +17,7 @@
 		"projectName": "VoidBreak",
 		"args": "--width 1280 --height 720",
 		"vmArgs": "-Xincgc -Xmx4G -Xms2G",
-		"cwd": "${workspaceFolder}/VoidBreak/testing",
+		"cwd": "${workspaceFolder}\\testing",
 		"console": "internalConsole",
 		"request": "launch"
 	}]

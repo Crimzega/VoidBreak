@@ -25,20 +25,22 @@ public class ContainerZechaDrawer extends Container{
 
 	@Override
 	public ItemStack transferStackInSlot(EntityPlayer player, int index){
-		ItemStack stack = null;
-		Slot slot = (Slot)inventorySlots.get(index);
+		ItemStack result = null;
+		Slot slot = (Slot) this.inventorySlots.get(index);
 		if(slot != null && slot.getHasStack()){
-			ItemStack stack1 = slot.getStack();
-			stack = stack1.copy();
+			ItemStack stack = slot.getStack();
+			result = stack.copy();
 			int invSize = zechaDrawer.getSizeInventory();
-			if(index < invSize) if(!mergeItemStack(stack1, invSize, inventorySlots.size(), true)) return null;
-			else if(!mergeItemStack(stack1, 0, invSize, false)) return null;
-			if(stack1.stackSize == 0) slot.putStack(null);
+			// TODO: Fix ghost item creation
+			if(index < invSize) if(!mergeItemStack(stack, invSize, this.inventorySlots.size(), true)) return null;
+			// TODO: Allow moving items from player inventory
+			else if(!mergeItemStack(stack, 0, invSize, false)) return null;
+			if(stack.stackSize == 0) slot.putStack((ItemStack) null);
 			else slot.onSlotChanged();
-			if(stack1.stackSize == stack.stackSize) return null;
-			slot.onPickupFromSlot(player, stack1);
+			if(stack.stackSize == result.stackSize) return null;
+			slot.onPickupFromSlot(player, stack);
 		}
-		return stack;
+		return result;
 	}
 
 	@Override

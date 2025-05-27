@@ -43,7 +43,7 @@ public class ZechaDrawerRenderer extends TileEntitySpecialRenderer implements IS
 	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float partialTicks){ renderZechaDrawerAt((TileZechaDrawer)tile, x, y, z, partialTicks); }
 
 	public void renderZechaDrawerAt(TileZechaDrawer drawer, double x, double y, double z, float partialTicks){
-		int metadata = drawer.hasWorldObj()? drawer.blockMetadata: 0;
+		int metadata = drawer.hasWorldObj()? drawer.getBlockMetadata(): 0;
 		bindTexture(TEXTURE);
 		glPushMatrix();
 		glEnable(GL_RESCALE_NORMAL);

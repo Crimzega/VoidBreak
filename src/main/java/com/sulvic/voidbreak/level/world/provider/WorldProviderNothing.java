@@ -6,6 +6,7 @@ import com.sulvic.voidbreak.level.world.chunk.generator.WorldChunkManagerNothing
 
 import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.chunk.IChunkProvider;
 
 public class WorldProviderNothing extends WorldProvider{
 
@@ -28,6 +29,8 @@ public class WorldProviderNothing extends WorldProvider{
 		hasNoSky = true;
 		dimensionId = dimensionID;
 	}
+
+	public IChunkProvider createChunkGeneration(){ return null; }
 
 	@Override
 	public float[] calcSunriseSunsetColors(float celestialAngle, float partialTicks){ return null; }
@@ -57,6 +60,6 @@ public class WorldProviderNothing extends WorldProvider{
 	public boolean canCoordinateBeSpawn(int x, int z){ return false; }
 
 	@Override
-	public String getDimensionName(){ return "Nothing (Location)"; }
+	public String getDimensionName(){ return "Nothing (Dimension Veriation)"; }
 
 }

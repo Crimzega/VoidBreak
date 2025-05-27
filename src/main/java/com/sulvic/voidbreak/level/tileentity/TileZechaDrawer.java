@@ -50,19 +50,20 @@ public class TileZechaDrawer extends TileEntity implements IInventory{
 
 	@Override
 	public ItemStack decrStackSize(int index, int amount){
-		ItemStack stack = getStackInSlot(index);
-		if(stack != null){
-			ItemStack result;
-			if(stack.stackSize <= amount){
-				result = stack;
+		if(drawerInventory[index] != null){
+			ItemStack itemstack;
+			if(drawerInventory[index].stackSize <= amount){
+				itemstack = drawerInventory[index];
 				drawerInventory[index] = null;
 				markDirty();
-				return result;
+				return itemstack;
 			}
-			result = stack.splitStack(amount);
-			if(stack.stackSize == 0) drawerInventory[index] = null;
-			markDirty();
-			return result;
+			else{
+				itemstack = drawerInventory[index].splitStack(amount);
+				if(drawerInventory[index].stackSize == 0) drawerInventory[index] = null;
+				markDirty();
+				return itemstack;
+			}
 		}
 		else return null;
 	}
@@ -72,8 +73,8 @@ public class TileZechaDrawer extends TileEntity implements IInventory{
 
 	@Override
 	public ItemStack getStackInSlotOnClosing(int index){
-		if(getStackInSlot(index) != null){
-			ItemStack stack = getStackInSlot(index);
+		if(drawerInventory[index] != null){
+			ItemStack stack = drawerInventory[index];
 			drawerInventory[index] = null;
 			return stack;
 		}
@@ -145,7 +146,7 @@ public class TileZechaDrawer extends TileEntity implements IInventory{
 		super.writeToNBT(nbtCompound);
 		NBTTagList nbtList = new NBTTagList();
 		for(int i = 0; i < getSizeInventory(); i++){
-			ItemStack stack = getStackInSlot(i);
+			ItemStack stack = drawerInventory[i];
 			if(stack != null){
 				NBTTagCompound nbtCompound1 = new NBTTagCompound();
 				nbtCompound1.setByte("Slot", (byte)i);

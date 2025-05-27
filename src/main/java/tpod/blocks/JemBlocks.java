@@ -15,46 +15,31 @@ public class JemBlocks extends Block
 {
     @SideOnly(Side.CLIENT)
     private IIcon[] texture;
-    private static String[] subBlocks;
-    
+    private static String[] subBlocks = {"ruby", "pinkPanther", "sapphire", "cassiterite"};
+
     public JemBlocks() {
         super(Material.rock);
-        this.setCreativeTab(ContentsVBD2.creativeTabs[0]);
-        this.setHardness(3.0f);
-        this.setHarvestLevel("pickaxe", 2);
-        this.setResistance(5.0f);
-        this.setStepSound(Block.soundTypePiston);
+        setCreativeTab(ContentsVBD2.creativeTabs[0]);
+        setHardness(3f);
+        setHarvestLevel("pickaxe", 2);
+        setResistance(5f);
+        setStepSound(Block.soundTypePiston);
     }
-    
-    public int getMetadata(final int meta) {
-        return meta;
-    }
-    
-    public int damageDropped(final int meta) {
-        return meta;
-    }
-    
+
+    public int getMetadata(int meta){ return meta; }
+
+    public int damageDropped(int meta){ return meta; }
+
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(final int side, final int meta) {
-        return this.texture[meta];
-    }
-    
+    public IIcon getIcon(int side, int meta){ return texture[meta]; }
+
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(final Item block, final CreativeTabs creativeTabs, final List list) {
-        for (int i = 0; i < JemBlocks.subBlocks.length; ++i) {
-            list.add(new ItemStack(block, 1, i));
-        }
-    }
-    
+    public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list){ for(int i = 0; i < JemBlocks.subBlocks.length; ++i) list.add(new ItemStack(block, 1, i)); }
+
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(final IIconRegister iconRegister) {
-        this.texture = new IIcon[JemBlocks.subBlocks.length];
-        for (int i = 0; i < JemBlocks.subBlocks.length; ++i) {
-            this.texture[i] = iconRegister.registerIcon("VoidBreakDemo2:" + JemBlocks.subBlocks[i] + "Block");
-        }
+    public void registerBlockIcons(IIconRegister iconRegister){
+        texture = new IIcon[JemBlocks.subBlocks.length];
+        for(int i = 0; i < JemBlocks.subBlocks.length; ++i) texture[i] = iconRegister.registerIcon("VoidBreakDemo2:" + JemBlocks.subBlocks[i] + "Block");
     }
-    
-    static {
-        JemBlocks.subBlocks = new String[] { "ruby", "pinkPanther", "sapphire", "cassiterite" };
-    }
+
 }

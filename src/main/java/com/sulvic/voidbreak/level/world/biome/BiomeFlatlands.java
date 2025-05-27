@@ -7,21 +7,21 @@ import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 
-@SuppressWarnings({"unchecked"})
-public class BiomeFlatlands extends BiomeGenBase{
+@SuppressWarnings({ "unchecked" })
+public class BiomeFlatlands extends BiomeGenBase {
 
 	protected static final int T = 9286496;
 
-	public BiomeFlatlands(){
+	public BiomeFlatlands() {
 		super(getBiomeId());
 		setColor(0x8DB360);
 		setBiomeName("Flatlands");
 		setHeight(new Height(0.252f, 0.004f));
-		setTemperatureRainfall(0.25f, 0.45f);
+		setTemperatureRainfall(1.64f, 0.02f);
 		topBlock = Blocks.grass;
 		fillerBlock = Blocks.dirt;
-		theBiomeDecorator.flowersPerChunk = 5;
-		theBiomeDecorator.grassPerChunk = 9;
+		theBiomeDecorator.flowersPerChunk = 0;
+		theBiomeDecorator.grassPerChunk = 1;
 		theBiomeDecorator.treesPerChunk = 0;
 		spawnableCreatureList.clear();
 		spawnableMonsterList.clear();

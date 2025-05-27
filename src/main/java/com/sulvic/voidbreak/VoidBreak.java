@@ -8,9 +8,7 @@ import com.sulvic.voidbreak.common.ConfigVB;
 import com.sulvic.voidbreak.network.proxy.CommonVB;
 
 import cpw.mods.fml.common.*;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.*;
 import net.minecraft.init.Items;
 
 @Mod(modid = MODID, name = NAME, version = VERSION)

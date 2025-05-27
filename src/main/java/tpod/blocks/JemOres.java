@@ -17,69 +17,48 @@ public class JemOres extends Block
     @SideOnly(Side.CLIENT)
     private IIcon[] texture;
     private Random rand;
-    private static String[] subBlocks;
-    
-    public JemOres() {
+    private static String[] subBlocks = {"ruby", "pinkPanther", "sapphire", "cassiterite"};
+
+    public JemOres(){
         super(Material.rock);
-        this.rand = new Random();
-        this.setCreativeTab(ContentsVBD2.creativeTabs[0]);
-        this.setHardness(3.0f);
-        this.setHarvestLevel("pickaxe", 2);
-        this.setResistance(5.0f);
-        this.setStepSound(Block.soundTypePiston);
+        rand = new Random();
+        setCreativeTab(ContentsVBD2.creativeTabs[0]);
+        setHardness(3.0f);
+        setHarvestLevel("pickaxe", 2);
+        setResistance(5.0f);
+        setStepSound(Block.soundTypePiston);
     }
-    
-    public int getExpDrop(final IBlockAccess blockAccess, final int par1, final int par2) {
-        if (this.getItemDropped(par1, this.rand, par2) != Item.getItemFromBlock((Block)this)) {
-            return MathHelper.getRandomIntegerInRange(this.rand, 3, 7);
-        }
+
+    public int getExpDrop(IBlockAccess blockAccess, int par1, int par2){
+        if(getItemDropped(par1, rand, par2) != Item.getItemFromBlock((Block)this)) return MathHelper.getRandomIntegerInRange(rand, 3, 7);
         return 0;
     }
-    
-    public int getMetadata(final int meta) {
-        return meta;
-    }
-    
-    public int damageDropped(final int meta) {
-        return meta;
-    }
-    
-    public int quantityDroppedWithBonus(final int par1, final Random rand) {
-        if (par1 > 0 && Item.getItemFromBlock((Block)this) != this.getItemDropped(0, rand, par1)) {
+
+    public int getMetadata(int meta){ return meta; }
+
+    public int damageDropped(int meta){ return meta; }
+
+    public int quantityDroppedWithBonus(int par1, Random rand){
+        if(par1 > 0 && Item.getItemFromBlock((Block)this) != getItemDropped(0, rand, par1)){
             int j = rand.nextInt(par1 + 2) - 1;
-            if (j < 0) {
-                j = 0;
-            }
-            return this.quantityDropped(rand) * (j * 1);
+            if(j < 0) j = 0;
+            return quantityDropped(rand) * (j * 1);
         }
-        return this.quantityDropped(rand);
+        return quantityDropped(rand);
     }
-    
-    public Item getItemDropped(final int par1, final Random rand, final int par2) {
-        return ContentsVBD2.items[0];
-    }
-    
+
+    public Item getItemDropped(int par1, Random rand, int par2){ return ContentsVBD2.items[0]; }
+
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(final int side, final int meta) {
-        return this.texture[meta];
-    }
-    
+    public IIcon getIcon(int side, int meta){ return texture[meta]; }
+
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(final Item block, final CreativeTabs creativeTabs, final List list) {
-        for (int i = 0; i < JemOres.subBlocks.length; ++i) {
-            list.add(new ItemStack(block, 1, i));
-        }
-    }
-    
+    public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list){ for(int i = 0; i < JemOres.subBlocks.length; ++i) list.add(new ItemStack(block, 1, i)); }
+
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(final IIconRegister iconRegister) {
-        this.texture = new IIcon[JemOres.subBlocks.length];
-        for (int i = 0; i < JemOres.subBlocks.length; ++i) {
-            this.texture[i] = iconRegister.registerIcon("VoidBreakDemo2:" + JemOres.subBlocks[i] + "Ore");
-        }
+    public void registerBlockIcons(IIconRegister iconRegister){
+        texture = new IIcon[JemOres.subBlocks.length];
+        for(int i = 0; i < JemOres.subBlocks.length; ++i) texture[i] = iconRegister.registerIcon("VoidBreakDemo2:" + JemOres.subBlocks[i] + "Ore");
     }
-    
-    static {
-        JemOres.subBlocks = new String[] { "ruby", "pinkPanther", "sapphire", "cassiterite" };
-    }
+
 }

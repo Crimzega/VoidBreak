@@ -25,8 +25,8 @@ public class ConfigVB extends BezkinConfig{
 		theConfig.load();
 		try{
 			allowEnchantedRecipes = theConfig.getBoolean("allowEnchantedRecipes", CATEGORY_RECIPES, true, "Allows mod items to be enchanted when crafted.");
-			biomeStartID = theConfig.getInt("biomeStartId", CATEGORY_IDS, 200, 160, 420, "Sets the mods starting biome ID.");
-			entityStartID = theConfig.getInt("eneityStartId", CATEGORY_IDS, 300, 280, 560, "Sets the mods starting entity ID.");
+			biomeStartID = theConfig.getInt("biomeStartID", CATEGORY_IDS, 200, 160, 420, "Sets the mods starting biome ID.");
+			entityStartID = theConfig.getInt("eneityStartID", CATEGORY_IDS, 300, 280, 560, "Sets the mods starting entity ID.");
 			dimensionStartID = theConfig.getInt("dimensionStartID", CATEGORY_IDS, 6000, 2000, 20000, "Sets the mods starting dimension ID.");
 			pileBlocks = theConfig.getStringList("pileBlocks", CATEGORY_WORLD, new String[0], "Adds blocks for the sugar piles to be allowed on. (e.g: modid:blockname)");
 			enhancedHoes = theConfig.getBoolean("enhancedHoes", CATEGORY_WORLD, false, "Allows hoes to make farmland over more than one block.");

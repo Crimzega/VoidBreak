@@ -14,6 +14,7 @@ import com.sulvic.voidbreak.VoidBreak;
 import com.sulvic.voidbreak.level.world.provider.WorldProviderNothing;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
@@ -120,10 +121,11 @@ public class SulvicCommonEvents{
 
 	@SubscribeEvent
 	public void onItemUseStart(PlayerUseItemEvent.Start evt){
+		EntityPlayer player = evt.entityPlayer;
 		ItemStack stack = evt.item;
 		if(stack != null && stack.getItem() != null){
 			Item item = stack.getItem();
-			if(item == Items.sugar) evt.duration = 32;
+			if(player.canEat(Loader.isModLoaded("spiderqueen")) && item == Items.sugar) evt.duration = 32;
 		}
 	}
 
