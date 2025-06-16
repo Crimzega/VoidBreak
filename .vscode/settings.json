@@ -27,10 +27,11 @@
 	"files.insertFinalNewline": true,
 	"java.configuration.updateBuildConfiguration": "automatic",
 	"java.debug.settings.hotCodeReplace": "auto",
-	"java.import.gradle.java.home": "C:/Program Files/Java/JDK-17.0.13",
-	"java.import.gradle.user.home": "C:/Gradle/SulvicVB",
+	"java.import.gradle.java.home": "C:\\Program Files\\Java\\JDK-17.0.13",
+	"java.import.gradle.user.home": "C:\\Gradle\\SulvicVB",
 	"java.project.sourcePaths": ["src/main/java", "src/main/resources"],
 	"java.project.outputPath": "target/classes",
 	"jdk.jdkhome": "C:\\Program Files\\Java\\JDK-17.0.13",
-	"java.debug.settings.onBuildFailureProceed": true
+	"java.debug.settings.onBuildFailureProceed": true,
+	"java.compile.nullAnalysis.mode": "automatic"
 }

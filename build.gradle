@@ -9,11 +9,14 @@ buildscript {
 			name = "sonatype"
 			url = "https://oss.sonatype.org/content/repositories/snapshots/"
 		}
+		maven {
+			name = "SpogePowered Maven"
+			url = "https://repo.spongepowered.org/maven"
+		}
+		mavenCentral()
 	}
 	dependencies {
-		classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') {
-			changing = true
-		}
+		classpath 'com.anatawa12.forge:ForgeGradle:1.2-1.1.+'
 	}
 }
 
@@ -26,6 +29,12 @@ apply plugin: 'forge'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = "windows-1252"
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
 
 repositories {
 	maven {
