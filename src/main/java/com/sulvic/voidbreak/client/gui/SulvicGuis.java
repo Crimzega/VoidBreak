@@ -18,8 +18,10 @@ public class SulvicGuis implements IGuiHandler{
 		InventoryPlayer playerInv = player.inventory;
 		TileEntity tile = world.getTileEntity(x, y, z);
 		switch(id){
-//			case specialWorkbenchID: return new GuiSpecialWorkbench(playerInv, (TileSpecialWorkbench)tile);
-			case zechaDrawerID: return new GuiZechaDrawer(playerInv, (TileZechaDrawer)tile);
+			case specialWorkbenchID:
+				return new GuiSpecialWorkbench(playerInv, (TileSpecialWorkbench)tile);
+			case zechaDrawerID:
+				return new GuiZechaDrawer(playerInv, (TileZechaDrawer)tile);
 		}
 		return null;
 	}
@@ -29,8 +31,10 @@ public class SulvicGuis implements IGuiHandler{
 		InventoryPlayer playerInv = player.inventory;
 		TileEntity tile = world.getTileEntity(x, y, z);
 		switch(id){
-//			case specialWorkbenchID: return new ContainerSpecialWorkbench(playerInv, (TileSPecialWorkbench)tile);
-			case zechaDrawerID: return new ContainerZechaDrawer(playerInv, (TileZechaDrawer)tile);
+			case specialWorkbenchID:
+				return new ContainerSpecialWorkbench(playerInv, (TileSpecialWorkbench)tile);
+			case zechaDrawerID:
+				return new ContainerZechaDrawer(playerInv, (TileZechaDrawer)tile);
 		}
 		return null;
 	}

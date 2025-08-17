@@ -14,7 +14,6 @@ import tpod.tabs.*;
 import net.minecraftforge.common.util.*;
 import tpod.items.*;
 import tpod.util.registries.*;
-import net.minecraft.world.biome.*;
 import net.minecraft.item.*;
 
 public class RegistrationVBD2{

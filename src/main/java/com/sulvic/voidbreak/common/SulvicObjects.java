@@ -10,13 +10,12 @@ import com.sulvic.voidbreak.level.world.block.*;
 import com.sulvic.voidbreak.level.world.provider.WorldProviderNothing;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.world.WorldProvider;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class SulvicObjects {
+public class SulvicObjects{
 
 	private static int currentBiomeId = VoidBreak.getConfig().getBiomeStartID();
 	private static int currentDimensionId = VoidBreak.getConfig().getDimensionStartID();
@@ -47,8 +46,7 @@ public class SulvicObjects {
 	public static final PileSugar SUGAR_PILE = new PileSugar();
 	public static final BlockBurntSugar BURNT_SUGAR_BLOCK = new BlockBurntSugar();
 	public static final PileBurntSugar BURNT_SUGAR_PILE = new PileBurntSugar();
-	// public static final BlockSpecialWorkbench SPECIAL_WORKBENCH = new
-	// BlockSpecialWorkbench();
+	public static final BlockSpecialWorkbench SPECIAL_WORKBENCH = new BlockSpecialWorkbench();
 	public static final BlockZechaDrawer ZECHA_DRAWER = new BlockZechaDrawer();
 	public static final BlockVoidGem VOID_GEM_BLOCK = new BlockVoidGem();
 	public static final BlockNothing NOTHING_BLOCK = new BlockNothing();
@@ -67,25 +65,19 @@ public class SulvicObjects {
 	public static final ItemOrangeWedge ORANGE_WEDGE = new ItemOrangeWedge();
 	public static final ItemOrangePeel ORANGE_PEEL = new ItemOrangePeel();
 
-	public static int getBiomeId() {
-		return currentBiomeId++;
-	}
+	public static int getBiomeId(){ return currentBiomeId++; }
 
-	public static int getDimensionId() {
-		return currentDimensionId++;
-	}
+	public static int getDimensionId(){ return currentDimensionId++; }
 
-	public static void registerItems() {
+	public static void registerItems(){
 		// Block Registering Section
 		GameRegistry.registerBlock(CITRUS_LOG, "citrus_log");
 		GameRegistry.registerBlock(CITRUS_LEAVES, "citrus_leaves");
 		GameRegistry.registerBlock(CITRUS_SAPLING, "citrus_sapling");
 		GameRegistry.registerBlock(CITRUS_PLANKS, "citrus_planks");
 		GameRegistry.registerBlock(CITRUS_STAIRS, "citrus_stairs");
-		GameRegistry.registerBlock(CITRUS_SLAB, ItemSlabCitrus.class, "citrus_slab", CITRUS_SLAB, CITRUS_DOUBLE_SLAB,
-				false);
-		GameRegistry.registerBlock(CITRUS_DOUBLE_SLAB, ItemSlabCitrus.class, "citrus_slab_double", CITRUS_SLAB,
-				CITRUS_DOUBLE_SLAB, false);
+		GameRegistry.registerBlock(CITRUS_SLAB, ItemSlabCitrus.class, "citrus_slab", CITRUS_SLAB, CITRUS_DOUBLE_SLAB, false);
+		GameRegistry.registerBlock(CITRUS_DOUBLE_SLAB, ItemSlabCitrus.class, "citrus_slab_double", CITRUS_SLAB, CITRUS_DOUBLE_SLAB, true);
 		GameRegistry.registerBlock(GEM_ORE, ItemOreGem.class, "gem_ore");
 		GameRegistry.registerBlock(SPECIAL_ORE, "special_ore");
 		GameRegistry.registerBlock(ZECHA_ORE, "zecha_ore");
@@ -100,7 +92,7 @@ public class SulvicObjects {
 		GameRegistry.registerBlock(SUGAR_PILE, "sugar_pile");
 		GameRegistry.registerBlock(BURNT_SUGAR_BLOCK, "burnt_sugar_block");
 		GameRegistry.registerBlock(BURNT_SUGAR_PILE, "burnt_sugar_pile");
-		// GameRegistry.registerBlock(SPECIAL_WORKBENCH, "special_workbench");
+		GameRegistry.registerBlock(SPECIAL_WORKBENCH, "special_workbench");
 		GameRegistry.registerBlock(ZECHA_DRAWER, "zecha_drawer");
 		GameRegistry.registerBlock(VOID_GEM_BLOCK, ItemBlockVoidGem.class, "void_gem_block");
 		GameRegistry.registerBlock(NOTHING_BLOCK, "nothing_block");
@@ -128,11 +120,11 @@ public class SulvicObjects {
 		OreDictionary.registerOre("treeLeaves", CITRUS_LEAVES);
 
 		// Tile Entity Registration Section
-		// GameRegistry.registerTileEntity(TileSpecialWorkbench.class, SpecialWorkbench");
+		GameRegistry.registerTileEntity(TileSpecialWorkbench.class, "SpecialWorkbench");
 		GameRegistry.registerTileEntity(TileZechaDrawer.class, "ZechaDrawer");
 	}
 
-	public static void registerBiomes() {
+	public static void registerBiomes(){
 		BiomeDictionary.registerBiomeType(FLATLANDS, SPARSE, DRY, PLAINS);
 		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(FLATLANDS, 4));
 		BiomeManager.addSpawnBiome(FLATLANDS);

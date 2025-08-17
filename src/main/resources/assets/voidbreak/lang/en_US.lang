@@ -6,12 +6,14 @@ achievement.newGems=NEW GEMS!
 achievement.newGems.desc=
 
 container.zechaDrawer=Zecha Drawer
+container.specialWorkbench=Zéta Workbench
 
 tile.logCitrus.name=Citrus Log
 tile.leavesCitrus.name=Citrus Leaves
 tile.saplingCitrus.name=Citrus Sapling
-tile.planksCitrus.name=Citrus Planks
-tile.slabCitrus.name=Citrus Slab
+tile.planksCitrus.name=Citrus Wood Planks
+tile.slabCitrus.name=Citrus Wood Slab
+tile.stairsCitrus.name=Citrus Wood Stairs
 
 tile.gemOre.ruby.name=Ruby Ore
 tile.gemOre.pinkPanther.name=Pink Panther Ore

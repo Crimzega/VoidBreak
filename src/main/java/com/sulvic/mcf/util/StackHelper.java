@@ -1,8 +1,11 @@
 package com.sulvic.mcf.util;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,18 +20,24 @@ public class StackHelper{
 
 	public static boolean areItemsEqual(ItemStack stack, ItemStack stack1){
 		if(stack == null && stack1 == null) return false;
-		if(stack.getItem() != stack1.getItem()) return false;
-		if(stack.getItemDamage() != stack.getItemDamage()) return false;
-		return true;
+		if(stack != null && stack1 != null) {
+			if(stack.getItem() != stack1.getItem()) return false;
+			if(stack.getItemDamage() != stack.getItemDamage()) return false;
+			return true;
+		}
+		else return false;
+	}
+
+	public static boolean hasItem(List<ItemStack> list, ItemStack stack){
+		for(ItemStack stack1: list) if(areItemsEqual(stack1, stack)) return true;
+		return false;
 	}
 
 	public static boolean hasAllItems(List<ItemStack> list, List<ItemStack> containables){
 		int maxCount = 0;
-		for(ItemStack stack: list) for(ItemStack stack1: containables){
-			if(stack.isItemEqual(stack1)){
-				maxCount++;
-				continue;
-			}
+		for(ItemStack stack: containables) if(hasItem(list, stack)){
+			maxCount++;
+			continue;
 		}
 		return maxCount == list.size();
 	}
@@ -37,6 +46,20 @@ public class StackHelper{
 		for(ItemStack stack: list) for(ItemStack stack1: oreDictContainables) if(stack.isItemEqual(stack1)) return true;
 		return false;
 	}
+
+	public static List<ItemStack> consolidateItemList(List<ItemStack> list){
+		Map<Item, Integer> itemCountMap = Maps.newHashMap();
+		for(ItemStack stack: list) if(stack != null){
+			Item item = stack.getItem();
+			int count = stack.stackSize;
+			itemCountMap.put(item, itemCountMap.getOrDefault(item, 0) + count);
+		}
+		List<ItemStack> result = Lists.newArrayList();
+		for(Map.Entry<Item, Integer> entry: itemCountMap.entrySet()) result.add(new ItemStack(entry.getKey(), entry.getValue()));
+		return result;
+	}
+
+	public static List<ItemStack> consolidateItemList(ItemStack... stacks){ return consolidateItemList(Arrays.asList(stacks)); }
 
 	public static boolean areStacksEqual(ItemStack stack, ItemStack stack1){
 		if(!areItemsEqual(stack, stack1)) return false;

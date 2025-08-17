@@ -6,6 +6,7 @@ import static com.sulvic.voidbreak.common.FolkrumTabs.*;
 import java.util.List;
 
 import com.sulvic.mcf.network.proxy.ZaranthaClient;
+import com.sulvic.mcf.util.ZimedaMath;
 import com.sulvic.voidbreak.lib.GemstoneData;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -27,7 +28,7 @@ public class ItemGem extends Item{
 	}
 
 	@Override
-	public IIcon getIconFromDamage(int metadata){ return textures[metadata]; }
+	public IIcon getIconFromDamage(int metadata){ return textures[ZimedaMath.clampInt(metadata, 0, GemstoneData.Type.size() - 1)]; }
 
 	@Override
 	public boolean isBeaconPayment(ItemStack stack){ return true; }

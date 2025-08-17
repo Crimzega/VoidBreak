@@ -36,8 +36,8 @@ public class GuiZechaDrawer extends GuiContainer{
 	protected void drawGuiContainerForegroundLayer(int clientX, int clientY){
 		String tileName = zechaDrawer.getInventoryName();
 		if(!zechaDrawer.hasCustomInventoryName()) tileName = I18n.format(tileName, new Object[0]);
-		fontRendererObj.drawString(tileName, 12, 6, 0x404040);
-		fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 39, 163, 0x404040);
+		fontRendererObj.drawString(tileName, 11, 6, 0x404040);
+		fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 38, 163, 0x404040);
 	}
 
 }

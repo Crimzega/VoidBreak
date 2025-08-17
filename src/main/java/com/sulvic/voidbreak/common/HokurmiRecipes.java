@@ -10,6 +10,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+@SuppressWarnings({"unused"})
 public class HokurmiRecipes{
 
 	private static final String[] AXE_RECIPE = {"TT", "TP", " P"};

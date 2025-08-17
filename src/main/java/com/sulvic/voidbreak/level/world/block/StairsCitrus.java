@@ -9,7 +9,7 @@ public class StairsCitrus extends BlockStairs{
 
 	public StairsCitrus(){
 		super(CITRUS_PLANKS, 0);
-		setBlockName("citrusStairs");
+		setBlockName("stairsCitrus");
 		setCreativeTab(BLOCKS);
 	}
 

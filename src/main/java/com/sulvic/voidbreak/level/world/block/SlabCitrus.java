@@ -10,7 +10,7 @@ public class SlabCitrus extends BlockSlab{
 
 	public SlabCitrus(boolean full){
 		super(full, CITRUS_MATERIAL);
-		setBlockName("citrusSlab");
+		setBlockName("slabCitrus");
 		setBlockTextureName(MODID + ":citrus/planks");
 		if(!full){
 			setCreativeTab(BLOCKS);

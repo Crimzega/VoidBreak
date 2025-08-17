@@ -20,25 +20,6 @@ public class ZimedaMath{
 
 	private static float makePositionOffset(Random rand){ return rand.nextFloat() * 0.8f + 0.1f; }
 
-	public static boolean tileEntityWithinRange(TileEntity tile, EntityPlayer player, double maxDist){
-		double posX = (double)tile.xCoord + 0.5d, posY = (double)tile.yCoord + 0.5d, posZ = (double)tile.zCoord + 0.5d;
-		return player.getDistanceSq(posX, posY, posZ) <= maxDist;
-	}
-
-	public static double getDistanceSqrt(double... values){
-		double result = 0d;
-		for(double value: values) result += Math.pow(value, 2d);
-		return Math.sqrt(result);
-	}
-
-	public static double getDistanceSqrtBetween(Entity entity, Entity entity1){ return getDistanceSqrt(entity.posX - entity1.posX, entity.posY - entity1.posY, entity.posZ - entity1.posZ); }
-
-	public static AxisAlignedBB getBounds(Entity entity, double dist){ return getBounds(entity.posX, entity.posY, entity.posZ, dist); }
-
-	public static AxisAlignedBB getBounds(int x, int y, int z, double dist){ return getBounds((double)x, (double)y, (double)z, dist); }
-
-	public static AxisAlignedBB getBounds(double x, double y, double z, double dist){ return AxisAlignedBB.getBoundingBox(x - dist, y - dist, z - dist, x + dist, y + dist, z + dist); }
-
 	public static <T extends Entity> List<T> getEntityTypeAround(Entity entity, World world, Class<T> entityCls, double dist){
 		List<T> result = Lists.newArrayList();
 		AxisAlignedBB bounds = getBounds(entity, dist);
@@ -64,6 +45,31 @@ public class ZimedaMath{
 	public static <T extends Entity> List<T> getEntityTypeAround(int x, int y, int z, World world, Class<T> entityCls, double dist){
 		return getEntityTypeAround((double)x, (double)y, (double)z, world, entityCls, dist);
 	}
+
+	public static AxisAlignedBB getBounds(Entity entity, double dist){ return getBounds(entity.posX, entity.posY, entity.posZ, dist); }
+
+	public static AxisAlignedBB getBounds(int x, int y, int z, double dist){ return getBounds((double)x, (double)y, (double)z, dist); }
+
+	public static AxisAlignedBB getBounds(double x, double y, double z, double dist){ return AxisAlignedBB.getBoundingBox(x - dist, y - dist, z - dist, x + dist, y + dist, z + dist); }
+
+	public static boolean tileEntityWithinRange(TileEntity tile, EntityPlayer player, double maxDist){
+		double posX = (double)tile.xCoord + 0.5d, posY = (double)tile.yCoord + 0.5d, posZ = (double)tile.zCoord + 0.5d;
+		return player.getDistanceSq(posX, posY, posZ) <= maxDist;
+	}
+
+	public static double getDistanceSqrt(double... values){
+		double result = 0d;
+		for(double value: values) result += Math.pow(value, 2d);
+		return Math.sqrt(result);
+	}
+
+	public static double getDistanceSqrtBetween(Entity entity, Entity entity1){ return getDistanceSqrt(entity.posX - entity1.posX, entity.posY - entity1.posY, entity.posZ - entity1.posZ); }
+
+	public static float clampFloat(float value, float min, float max){ return Math.max(min, Math.min(max, value)); }
+
+	public static double clampDouble(double value, double min, double max){ return Math.max(min, Math.min(max, value)); }
+
+	public static int clampInt(int value, int min, int max){ return Math.max(min, Math.min(max, value)); }
 
 	public static void dropAllItems(IInventory inv, World world, int x, int y, int z, Block block, Random rand){
 		for(int i = 0; i < inv.getSizeInventory(); i++){

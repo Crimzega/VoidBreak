@@ -30,10 +30,14 @@ public class ContainerZechaDrawer extends Container{
 		if(slot != null && slot.getHasStack()){
 			ItemStack stack = slot.getStack();
 			result = stack.copy();
-			int drawerInv = zechaDrawer.getSizeInventory();
-			int slotsInv = inventorySlots.size();
-			if(index < drawerInv) if(!mergeItemStack(stack, drawerInv, slotsInv, true)) return null;
-			else if(!mergeItemStack(stack, 0, drawerInv, false)) return null;
+			int drawerSize = zechaDrawer.getSizeInventory();
+			int containerSize = inventorySlots.size();
+			if(index < drawerSize){
+				if(!mergeItemStack(stack, drawerSize, containerSize, true)) return null;
+			}
+			else{
+				if(!mergeItemStack(stack, 0, drawerSize, false)) return null;
+			}
 			if(stack.stackSize == 0) slot.putStack(null);
 			else slot.onSlotChanged();
 			if(stack.stackSize == result.stackSize) return null;

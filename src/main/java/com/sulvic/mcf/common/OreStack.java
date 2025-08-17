@@ -25,6 +25,8 @@ public class OreStack{
 		return super.equals(obj);
 	}
 
+	public boolean hasMatchingItem(ItemStack stack){ return getTypes().contains(stack); }
+
 	@Override
 	public int hashCode(){ return 3 * 21 + oreDictName.hashCode(); }
 

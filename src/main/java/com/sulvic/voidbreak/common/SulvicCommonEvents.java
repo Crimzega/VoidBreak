@@ -41,6 +41,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import net.minecraftforge.event.world.BlockEvent;
 
+@SuppressWarnings({"unused"})
 public class SulvicCommonEvents{
 
 	private static final SulvicCommonEvents INSTANCE = new SulvicCommonEvents();
